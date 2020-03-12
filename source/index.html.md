@@ -1,11 +1,8 @@
 ---
-title: API Reference
+title: Mandocs
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -16,6 +13,63 @@ includes:
 
 search: true
 ---
+
+TODOS:
+- how to connect to the VPN
+  - Cisco Anyconnect for Windows or MacOS
+  - alternatively use openconnect for linux & macos
+- setup VS Code for coding environment
+  - use SSH fs for your environment
+  - use git & github or some online service to keep track of projects
+
+# Welcome
+
+Hi! As students of Texas A&M, we're given access to the central "Compute" service (which is hosted at compute.cse.tamu.edu). This site will help you set up your ssh connection and workflow to write your best code and make sure that tech doesn't get in your way.
+
+# Setup for MacOS & Linux
+
+The process for devices running MacOS and other UNIX-like operating systems is a breeze.
+
+## Steps
+1. Open up your terminal app
+```
+Command + Space (spotlight search on Mac) > "Terminal"
+```
+
+2. Enter the command ```ssh``` and you should get the output you see on the right side.
+
+```bash
+YOUR-COMPUTER $ ssh # run "ssh" in the terminal
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
+           [-D [bind_address:]port] [-E log_file] [-e escape_char]
+           [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J [user@]host[:port]] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-p port] [-Q query_option] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           [user@]hostname [command]
+```
+
+3. You're almost done! If you're on the A&M WiFi network (tamulink-wpa), skip to step 4. If you're not, you need to use A&M's VPN. This VPN will put you in College Station (actually on campus) and can be used for a myriad of purposes, including evading country firewalls (iMessage - Qatar, WhatsApp - China, etc.). But for now, let's use it to access the Compute servers.
+
+**Here's how to connect to the A&M VPN** before you try step 4.
+
+
+
+4. The last line of ssh help that you see is what we're going to use.
+
+Go ahead and copy the line below. Be sure to replace the USERNAME with the handle that you use to login to A&M services. **Note, this is not your UIN.**
+
+```bash
+ssh USERNAME@compute.cs.tamu.edu
+# "compute.cse.tamu.edu" does the same
+```
+
+```
+The authenticity of host 'blah.blah.blah (10.10.10.10)' can't be established.
+RSA key fingerprint is a4:d9:a4:d9:a4:d9a4:d9:a4:d9a4:d9a4:d9a4:d9a4:d9a4:d9.
+Are you sure you want to continue connecting (yes/no)?
+```
+
 
 # Introduction
 
