@@ -1,5 +1,5 @@
 ---
-title: Mandocs
+title: ComputeDocs
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -24,22 +24,49 @@ TODOS:
 
 # Welcome
 
-Hi! As students of Texas A&M, we're given access to the central "Compute" service (which is hosted at compute.cse.tamu.edu). This site will help you set up your ssh connection and workflow to write your best code and make sure that tech doesn't get in your way.
+Hi! As students of Texas A&M University, we're given access to the central "Compute" service (which is hosted at compute.cse.tamu.edu). This site will help you set up your ssh connection and workflow to write your code and make sure that your compute isn't in your way.
 
-# Setup for MacOS & Linux
+# Overarching Steps
+1. Connect to TAMU VPN ([connect.tamu.edu](https://connect.tamu.edu)) if you're not connected to campus wifi.
+  - **Skip this step if you're on campus (connected to TAMU wifi)**
+  - **MacOS & Linux**: Cisco AnyConnect or openconnect
+  - **Windows**: Cisco Anyconnect
+2. SSH into compute through some terminal program
+  - **MacOS & Linux**: native Terminal Program or [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+  - **Windows**: [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or PowerShell (yuck)
+3. Set up a workflow (my set up is below).
+4. Get coding ;)
 
-The process for devices running MacOS and other UNIX-like operating systems is a breeze.
+# Windows Users
+
+## Install VPN Client (Cisco Anyconnect recommended)
+1. Go to [https://connect.tamu.edu](https://connect.tamu.edu).
+2. Log in with NetID & password.
+3. Install the "Cisco AnyConnect Secure Mobility Client" for Windows.
+  - **Alternatively**, install AnyConnect from [Cisco's website](https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads).
+
+## Connecting to TAMU VPN
+**Skip this step if on campus (connect to TAMU wifi)**
+1. Open Cisco Anyconnect.
+2. In the prompt, type in `connect.tamu.edu` and press **Connect**.
+3. Type in username (NetID) and password.
+4. Approve sign in with [Duo Authentication](https://apps.apple.com/us/app/duo-mobile/id422663827).
+
+## Connecting to Compute Services ("ssh" into compute)
+1. Open PuTTY
+
+# MacOS Users
 
 ## Steps
 1. Open up your terminal app
 ```
-Command + Space (spotlight search on Mac) > "Terminal"
+Command + Space > "Terminal"
 ```
 
 2. Enter the command ```ssh``` and you should get the output you see on the right side.
 
 ```bash
-YOUR-COMPUTER $ ssh # run "ssh" in the terminal
+MacOS_user $ ssh # run "ssh" in the terminal
 usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
            [-D [bind_address:]port] [-E log_file] [-e escape_char]
            [-F configfile] [-I pkcs11] [-i identity_file]
