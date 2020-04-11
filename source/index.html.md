@@ -27,43 +27,73 @@ TODOS:
 Hi! As students of Texas A&M University, we're given access to the central "Compute" service (which is hosted at compute.cse.tamu.edu). This site will help you set up your ssh connection and workflow to write your code and make sure that your compute isn't in your way.
 
 # Overarching Steps
-1. Connect to TAMU VPN ([connect.tamu.edu](https://connect.tamu.edu)) if you're not connected to campus wifi.
+1. **Connect to TAMU VPN** ([connect.tamu.edu](https://connect.tamu.edu)) if you're not connected to campus wifi.
   - **Skip this step if you're on campus (connected to TAMU wifi)**
-  - **MacOS & Linux**: Cisco AnyConnect or openconnect
-  - **Windows**: Cisco Anyconnect
-2. SSH into compute through some terminal program
-  - **MacOS & Linux**: native Terminal Program or [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-  - **Windows**: [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or PowerShell (yuck)
+  - *MacOS & Linux*: Download Cisco AnyConnect or openconnect
+  - *Windows*: Download Cisco Anyconnect
+2. **SSH into compute** through some terminal program
+  - *MacOS & Linux*: native Terminal Program or [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+  - *Windows*: [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or PowerShell (yuck)
 3. Set up a workflow (my set up is below).
 4. Get coding ;)
 
 # Windows Users
 
-## Install VPN Client (Cisco Anyconnect recommended)
+## 1) Install VPN Client (Cisco Anyconnect recommended)
 1. Go to [https://connect.tamu.edu](https://connect.tamu.edu).
 2. Log in with NetID & password.
 3. Install the "Cisco AnyConnect Secure Mobility Client" for Windows.
   - **Alternatively**, install AnyConnect from [Cisco's website](https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads).
 
-## Connecting to TAMU VPN
-**Skip this step if on campus (connect to TAMU wifi)**
-1. Open Cisco Anyconnect.
-2. In the prompt, type in `connect.tamu.edu` and press **Connect**.
-3. Type in username (NetID) and password.
-4. Approve sign in with [Duo Authentication](https://apps.apple.com/us/app/duo-mobile/id422663827).
+## 1.5) Connecting to TAMU VPN - only for off-campus users
+2. Open Cisco Anyconnect.
+3. In the prompt, type in `connect.tamu.edu` and press **Connect**.
+4. Type in username (NetID) and password.
+5. Approve sign in with [Duo Authentication](https://apps.apple.com/us/app/duo-mobile/id422663827).
 
-## Connecting to Compute Services ("ssh" into compute)
+## 2) SSH into Compute
+
+```bash
+=================================================
+                PuTTY Configuration
+=================================================
+Host Name (or IP address) --> compute.cs.tamu.edu
+Port                      --> 22
+Connection Type           --> SSH (default)
+Saved Sessions            --> Any name to save yourself time
+```
+
 1. Open PuTTY
+2. Use the configuration on the right to connect.
+3. Press **Open** to test connection with TAMU Compute Servers.
+  - Tip: To save yourself time, type something into *Saved Sessions* and press **Save**
+4. An alert box will pop up for first time connections. **Press "Yes"** to trust the Compute servers.
+5. Type in your username / NetID
+6. Type in your password.
+7. Done deal.
 
 # MacOS Users
 
-## Steps
+## 1) Install VPN Client (Cisco Anyconnect recommended)
+1. Go to [https://connect.tamu.edu](https://connect.tamu.edu).
+2. Log in with NetID & password.
+3. Install the "Cisco AnyConnect Secure Mobility Client" for MacOS.
+  - **Alternatively**, install AnyConnect from [Cisco's website](https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads).
+
+## 1.5) Connecting to TAMU VPN
+1. **Skip this step if you're on campus (connected to TAMU wifi)**
+2. Open Cisco Anyconnect.
+3. In the prompt, type in `connect.tamu.edu` and press **Connect**.
+4. Type in username (NetID) and password.
+5. Approve sign in with [Duo Authentication](https://apps.apple.com/us/app/duo-mobile/id422663827).
+
+## 2) SSH into Compute
 1. Open up your terminal app
 ```
 Command + Space > "Terminal"
 ```
 
-2. Enter the command ```ssh``` and you should get the output you see on the right side.
+2. Enter the command ```ssh``` and you should get the output you see on the right.
 
 ```bash
 MacOS_user $ ssh # run "ssh" in the terminal
@@ -76,18 +106,10 @@ usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
            [user@]hostname [command]
 ```
 
-3. You're almost done! If you're on the A&M WiFi network (tamulink-wpa), skip to step 4. If you're not, you need to use A&M's VPN. This VPN will put you in College Station (actually on campus) and can be used for a myriad of purposes, including evading country firewalls (iMessage - Qatar, WhatsApp - China, etc.). But for now, let's use it to access the Compute servers.
-
-**Here's how to connect to the A&M VPN** before you try step 4.
-
-
-
-4. The last line of ssh help that you see is what we're going to use.
-
-Go ahead and copy the line below. Be sure to replace the USERNAME with the handle that you use to login to A&M services. **Note, this is not your UIN.**
+3. Copy the command below. Be sure to replace the *MY_USERNAME* with the handle that you use to login to A&M services. **Note, this is not your UIN.**
 
 ```bash
-ssh USERNAME@compute.cs.tamu.edu
+$ ssh MY_USERNAME@compute.cs.tamu.edu
 # "compute.cse.tamu.edu" does the same
 ```
 
