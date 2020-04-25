@@ -1,0 +1,23 @@
+The authenticity of host 'compute.cs.tamu.edu (128.194.138.139)' can't be established.
+ECDSA key fingerprint is SHA256:[fingerprint].
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'compute.cs.tamu.edu' (ECDSA) to the list of known hosts.
+
+		Texas A&M Engineering
+*****************************************************************************************************
+This computer system and data herein are available only for authorized purposes by authorized users, Use for any other purpose may result in administrative/disciplinary actions or criminal prosecution against the user. Usage may be subject to security testing and monitoring. Users have no expectation of privacy except as otherwise provided by applicable privacy laws. By using this computer system the user agrees to comply with all applicable laws and policies governing the use of Texas information resources. For further information, refer to Texas A&M University System Policy 29.01.03.
+
+To report an issue with this machine please email: linux-engr-helpdesk@tamu.edu and include your department, netid, computer location and computer name.
+*****************************************************************************************************
+
+If you get the error message: Can't create home directory
+Then you will need to first create your home directory. Directions are available in your browser by visiting the following web page: http://bit.ly/linuxhomedoc
+
+COMPUTER NAME: compute.cs.tamu.edu
+
+USERNAME@compute.cs.tamu.edu's password: 
+
+[USERNAME]@compute ~> (23:00:31 03/11/20)
+:: 
+
+# execute any command here

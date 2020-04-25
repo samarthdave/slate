@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>ComputeDocs</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -196,31 +196,62 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-1e815a84.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#welcome" class="toc-h1 toc-link" data-title="Welcome">Welcome</a>
+          </li>
+          <li>
+            <a href="#overarching-steps" class="toc-h1 toc-link" data-title="Overarching Steps">Overarching Steps</a>
+          </li>
+          <li>
+            <a href="#windows-users" class="toc-h1 toc-link" data-title="Windows Users">Windows Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1-install-vpn-client-cisco-anyconnect-recommended" class="toc-h2 toc-link" data-title="1) Install VPN Client (Cisco Anyconnect recommended)">1) Install VPN Client (Cisco Anyconnect recommended)</a>
+                  </li>
+                  <li>
+                    <a href="#1-5-connecting-to-tamu-vpn-only-for-off-campus-users" class="toc-h2 toc-link" data-title="1.5) Connecting to TAMU VPN - only for off-campus users">1.5) Connecting to TAMU VPN - only for off-campus users</a>
+                  </li>
+                  <li>
+                    <a href="#2-ssh-into-compute" class="toc-h2 toc-link" data-title="2) SSH into Compute">2) SSH into Compute</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#macos-users" class="toc-h1 toc-link" data-title="MacOS Users">MacOS Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1-install-vpn-client-cisco-anyconnect-recommended-2" class="toc-h2 toc-link" data-title="1) Install VPN Client (Cisco Anyconnect recommended)">1) Install VPN Client (Cisco Anyconnect recommended)</a>
+                  </li>
+                  <li>
+                    <a href="#1-5-connecting-to-tamu-vpn" class="toc-h2 toc-link" data-title="1.5) Connecting to TAMU VPN">1.5) Connecting to TAMU VPN</a>
+                  </li>
+                  <li>
+                    <a href="#2-ssh-into-compute-2" class="toc-h2 toc-link" data-title="2) SSH into Compute">2) SSH into Compute</a>
+                  </li>
+              </ul>
+          </li>
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
@@ -247,18 +278,126 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
+        <p>TODOS:
+- how to connect to the VPN
+  - Cisco Anyconnect for Windows or MacOS
+  - alternatively use openconnect for linux &amp; macos
+- setup VS Code for coding environment
+  - use SSH fs for your environment
+  - use git &amp; github or some online service to keep track of projects</p>
+<h1 id='welcome'>Welcome</h1>
+<p>Hi! As students of Texas A&amp;M University, we&#39;re given access to the central &quot;Compute&quot; service (which is hosted at compute.cse.tamu.edu). This site will help you set up your ssh connection and workflow to write your code and make sure that your compute isn&#39;t in your way.</p>
+<h1 id='overarching-steps'>Overarching Steps</h1>
+<ol>
+<li><strong>Connect to TAMU VPN</strong> (<a href="https://connect.tamu.edu">connect.tamu.edu</a>) if you&#39;re not connected to campus wifi.
+
+<ul>
+<li><strong>Skip this step if you&#39;re on campus (connected to TAMU wifi)</strong></li>
+<li><em>MacOS &amp; Linux</em>: Download Cisco AnyConnect or openconnect</li>
+<li><em>Windows</em>: Download Cisco Anyconnect</li>
+</ul></li>
+<li><strong>SSH into compute</strong> through some terminal program
+
+<ul>
+<li><em>MacOS &amp; Linux</em>: native Terminal Program or <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a></li>
+<li><em>Windows</em>: <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a> or PowerShell (yuck)</li>
+</ul></li>
+<li>Set up a workflow (my set up is below).</li>
+<li>Get coding ;)</li>
+</ol>
+<h1 id='windows-users'>Windows Users</h1><h2 id='1-install-vpn-client-cisco-anyconnect-recommended'>1) Install VPN Client (Cisco Anyconnect recommended)</h2>
+<ol>
+<li>Go to <a href="https://connect.tamu.edu">https://connect.tamu.edu</a>.</li>
+<li>Log in with NetID &amp; password.</li>
+<li>Install the &quot;Cisco AnyConnect Secure Mobility Client&quot; for Windows.
+
+<ul>
+<li><strong>Alternatively</strong>, install AnyConnect from <a href="https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads">Cisco&#39;s website</a>.</li>
+</ul></li>
+</ol>
+<h2 id='1-5-connecting-to-tamu-vpn-only-for-off-campus-users'>1.5) Connecting to TAMU VPN - only for off-campus users</h2>
+<ol>
+<li>Open Cisco Anyconnect.</li>
+<li>In the prompt, type in <code>connect.tamu.edu</code> and press <strong>Connect</strong>.</li>
+<li>Type in username (NetID) and password.</li>
+<li>Approve sign in with <a href="https://apps.apple.com/us/app/duo-mobile/id422663827">Duo Authentication</a>.</li>
+</ol>
+<h2 id='2-ssh-into-compute'>2) SSH into Compute</h2><pre class="highlight shell"><code><span class="o">=================================================</span>
+                PuTTY Configuration
+<span class="o">=================================================</span>
+Host Name <span class="o">(</span>or IP address<span class="o">)</span> --&gt; compute.cs.tamu.edu
+Port                      --&gt; 22
+Connection Type           --&gt; SSH <span class="o">(</span>default<span class="o">)</span>
+Saved Sessions            --&gt; Any name to save yourself <span class="nb">time</span>
+</code></pre>
+<ol>
+<li>Open PuTTY</li>
+<li>Use the configuration on the right to connect.</li>
+<li>Press <strong>Open</strong> to test connection with TAMU Compute Servers.
+
+<ul>
+<li>Tip: To save yourself time, type something into <em>Saved Sessions</em> and press <strong>Save</strong></li>
+</ul></li>
+<li>An alert box will pop up for first time connections. <strong>Press &quot;Yes&quot;</strong> to trust the Compute servers.</li>
+<li>Type in your username / NetID</li>
+<li>Type in your password.</li>
+<li>Done deal.</li>
+</ol>
+<h1 id='macos-users'>MacOS Users</h1><h2 id='1-install-vpn-client-cisco-anyconnect-recommended-2'>1) Install VPN Client (Cisco Anyconnect recommended)</h2>
+<ol>
+<li>Go to <a href="https://connect.tamu.edu">https://connect.tamu.edu</a>.</li>
+<li>Log in with NetID &amp; password.</li>
+<li>Install the &quot;Cisco AnyConnect Secure Mobility Client&quot; for MacOS.
+
+<ul>
+<li><strong>Alternatively</strong>, install AnyConnect from <a href="https://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client-v4-x/model.html#~tab-downloads">Cisco&#39;s website</a>.</li>
+</ul></li>
+</ol>
+<h2 id='1-5-connecting-to-tamu-vpn'>1.5) Connecting to TAMU VPN</h2>
+<ol>
+<li><strong>Skip this step if you&#39;re on campus (connected to TAMU wifi)</strong></li>
+<li>Open Cisco Anyconnect.</li>
+<li>In the prompt, type in <code>connect.tamu.edu</code> and press <strong>Connect</strong>.</li>
+<li>Type in username (NetID) and password.</li>
+<li>Approve sign in with <a href="https://apps.apple.com/us/app/duo-mobile/id422663827">Duo Authentication</a>.</li>
+</ol>
+<h2 id='2-ssh-into-compute-2'>2) SSH into Compute</h2>
+<ol>
+<li><p>Open up your terminal app
+<code>
+Command + Space &gt; &quot;Terminal&quot;
+</code></p></li>
+<li><p>Enter the command <code>ssh</code> and you should get the output you see on the right.</p></li>
+</ol>
+<pre class="highlight shell"><code>MacOS_user <span class="nv">$ </span>ssh <span class="c"># run "ssh" in the terminal</span>
+usage: ssh <span class="o">[</span>-46AaCfGgKkMNnqsTtVvXxYy] <span class="o">[</span>-b bind_address] <span class="o">[</span>-c cipher_spec]
+           <span class="o">[</span>-D <span class="o">[</span>bind_address:]port] <span class="o">[</span>-E log_file] <span class="o">[</span>-e escape_char]
+           <span class="o">[</span>-F configfile] <span class="o">[</span>-I pkcs11] <span class="o">[</span>-i identity_file]
+           <span class="o">[</span>-J <span class="o">[</span>user@]host[:port]] <span class="o">[</span>-L address] <span class="o">[</span>-l login_name] <span class="o">[</span>-m mac_spec]
+           <span class="o">[</span>-O ctl_cmd] <span class="o">[</span>-o option] <span class="o">[</span>-p port] <span class="o">[</span>-Q query_option] <span class="o">[</span>-R address]
+           <span class="o">[</span>-S ctl_path] <span class="o">[</span>-W host:port] <span class="o">[</span>-w local_tun[:remote_tun]]
+           <span class="o">[</span>user@]hostname <span class="o">[</span><span class="nb">command</span><span class="o">]</span>
+</code></pre>
+<ol>
+<li>Copy the command below. Be sure to replace the <em>MY_USERNAME</em> with the handle that you use to login to A&amp;M services. <strong>Note, this is not your UIN.</strong></li>
+</ol>
+<pre class="highlight shell"><code><span class="gp">$ </span>ssh MY_USERNAME@compute.cs.tamu.edu
+<span class="c"># "compute.cse.tamu.edu" does the same</span>
+</code></pre><pre class="highlight plaintext"><code>The authenticity of host 'blah.blah.blah (10.10.10.10)' can't be established.
+RSA key fingerprint is a4:d9:a4:d9:a4:d9a4:d9:a4:d9a4:d9a4:d9a4:d9a4:d9a4:d9.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre><h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
 
 <p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
@@ -495,9 +634,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
