@@ -24,7 +24,7 @@ TODOS:
 
 # Welcome
 
-Hi! As students of Texas A&M University, we're given access to the central "Compute" service (which is hosted at compute.cse.tamu.edu). This site will help you set up your ssh connection and workflow to write your code and make sure that your compute isn't in your way.
+Howdy! As students of Texas A&M University, we're given access to the central "Compute" service (which is hosted at compute.cse.tamu.edu). This site will help you set up your ssh connection and workflow to write your code and make sure that your compute isn't in your way.
 
 # Overarching Steps
 1. **Connect to TAMU VPN** ([connect.tamu.edu](https://connect.tamu.edu)) if you're not connected to campus wifi.
