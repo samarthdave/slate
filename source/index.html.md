@@ -5,26 +5,14 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
+  - <a href='https://github.com/samarthdave/slate'>Contribute</a>
 
 search: true
 ---
 
-TODOS:
-- how to connect to the VPN
-  - Cisco Anyconnect for Windows or MacOS
-  - alternatively use openconnect for linux & macos
-- setup VS Code for coding environment
-  - use SSH fs for your environment
-  - use git & github or some online service to keep track of projects
-
 # Welcome
 
-Howdy! As students of Texas A&M University, we're given access to the central "Compute" service (which is hosted at compute.cse.tamu.edu). This site will help you set up your ssh connection and workflow to write your code and make sure that your compute isn't in your way.
+Hey! As students at A&M, we're given access to the central "Compute" service (hosted at compute.cs.tamu.edu). This site will help you set up a connection and your environment.
 
 # Overarching Steps
 1. **Connect to TAMU VPN** ([connect.tamu.edu](https://connect.tamu.edu)) if you're not connected to campus wifi.
@@ -118,3 +106,56 @@ The authenticity of host 'blah.blah.blah (10.10.10.10)' can't be established.
 RSA key fingerprint is a4:d9:a4:d9:a4:d9a4:d9:a4:d9a4:d9a4:d9a4:d9a4:d9a4:d9.
 Are you sure you want to continue connecting (yes/no)?
 ```
+
+# Development Setup
+
+## Windows
+
+Install the following:
+- [VS Code](https://code.visualstudio.com/Download)
+- [VS Code Extension - SSH File System](https://marketplace.visualstudio.com/items?itemName=Kelvin.vscode-sshfs)
+- Cisco Anyconnect (link above)
+- Putty (or powershell)
+
+## MacOS
+
+Install the following:
+- [VS Code](https://code.visualstudio.com/Download)
+- [VS Code Extension - SSH File System](https://marketplace.visualstudio.com/items?itemName=Kelvin.vscode-sshfs)
+- Cisco Anyconnect (link above)
+  - **or** [install "openconnect"](https://people.eng.unimelb.edu.au/lucasjb/archive/oc_old.html) for terminal (macOS or Linux flavors)
+
+# Setting up SSH FS
+
+1. Either use on-campus wifi or connect to the vpn.
+
+Cisco Openconnect in the terminal:
+```bash
+$ sudo openconnect connect.tamu.edu
+# username, password, duo authentication, etc.
+# ...
+POST https://connect.tamu.edu/
+Got CONNECT response: HTTP/1.1 200 OK
+```
+
+2. `Ctrl+Shift+P` in VSCode > ">SSH FS: Create a SSH FS configuration"
+3. Name it and press save.
+4. Now fill out the following fields:
+```
+Hostname:
+compute.cs.tamu.edu
+--------------------------------------
+Root - uses your username and the first letter of it:
+/home/ugrads/w/wanda
+/home/ugrads/v/vision
+/home/ugrads/n/netID, etc.
+--------------------------------------
+Username - your netID:
+wanda
+--------------------------------------
+Password: either prompt or save it
+--------------------------------------
+```
+5. Press save
+6. Click the icon on the left for the extension & press the "folder +" sign to add to workspace
+7. It will prompt for your password and then connect.
