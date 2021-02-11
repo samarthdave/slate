@@ -112,6 +112,7 @@ Are you sure you want to continue connecting (yes/no)?
 ## Windows
 
 Install the following:
+
 - [VS Code](https://code.visualstudio.com/Download)
 - [VS Code Extension - SSH File System](https://marketplace.visualstudio.com/items?itemName=Kelvin.vscode-sshfs)
 - Cisco Anyconnect (link above)
@@ -143,6 +144,7 @@ Got CONNECT response: HTTP/1.1 200 OK
 2. `Ctrl+Shift+P` in VSCode > ">SSH FS: Create a SSH FS configuration"
 3. Name it and press save.
 4. Now fill out the following fields on the right:
+
 ```bash
 Hostname:
 compute.cs.tamu.edu
@@ -158,6 +160,7 @@ wanda
 Password: either prompt or save it
 --------------------------------------
 ```
+
 5. Press save
 6. Click the icon on the left for the extension & press the "folder +" sign to add to workspace
 7. It will prompt for your password and then connect.
