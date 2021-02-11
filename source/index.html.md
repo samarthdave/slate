@@ -132,16 +132,17 @@ Install the following:
 Cisco Openconnect in the terminal:
 ```bash
 $ sudo openconnect connect.tamu.edu
-# username, password, duo authentication, etc.
-# ...
+
+enter username, password, duo authentication, etc.
+...
 POST https://connect.tamu.edu/
 Got CONNECT response: HTTP/1.1 200 OK
 ```
 
 2. `Ctrl+Shift+P` in VSCode > ">SSH FS: Create a SSH FS configuration"
 3. Name it and press save.
-4. Now fill out the following fields:
-```
+4. Now fill out the following fields on the right:
+```bash
 Hostname:
 compute.cs.tamu.edu
 --------------------------------------
